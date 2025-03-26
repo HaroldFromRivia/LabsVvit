@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Makarov Vyacheslav BPI2403</title>
+</head>
+
+<body id="for-body">
+    <script>
+        const A = window.innerWidth; // примерное значение
+        const B = window.innerHeight; // примерное значение
+
+        const x = Math.atan(B / A);
+        const y = Math.atan(A / B);
+
+        const xDegrees = x * (180 / Math.PI);
+        const yDegrees = y * (180 / Math.PI);
+
+        console.log("Ygol x: ", xDegrees.toFixed(2));
+        console.log("Ygol y: ", yDegrees.toFixed(2));
+
+        const gradientFunc = () => {
+            document.getElementById("for-body").style.background = `linear-gradient(${xDegrees}deg, #410089a1, #0053a985)`;
+        };
+
+        gradientFunc();
+    </script>
+
+    <header id="conn-style" class="comfortaa-myfont">
+        <div class="contzag-container">
+            Сайт-визитка
+        </div>
+
+        <div class="links-cont">
+            <a class="for-padding" href="https://t.me/HaroldFromRivia">Телеграм</a>
+            <a class="for-padding" href="https://github.com/HaroldFromRivia/LabsVvit"> Мой GitHub</a>
+        </div>
+    </header>
+
+    <style>
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #conn-style {
+            height: 10%;
+            background-color: black;
+            color: aliceblue;
+        }
+
+
+        .comfortaa-myfont {
+            font-family: "Comfortaa", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+
+        .contzag-container {
+            padding: 40px;
+            font-size: 250%;
+        }
+
+        .links-cont a {
+            text-decoration: none;
+            color: aliceblue;
+            margin: 10px 10px 10px 10px;
+            padding: 4px 4px 4px 4px;
+            border-radius: 3px;
+            transition: all 0.7s linear;
+        }
+
+        .links-cont a:hover {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            background-color: #ffffff;
+            margin: 10px 10px 10px 10px;
+            padding: 4px 4px 4px 40px;
+            border-radius: 3px;
+            transition: all 0.7s linear;
+
+        }
+
+        .links-cont {
+            padding: 0px 20px 0px 20px;
+            margin: 0px 10px 0px 10px;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
+    <main class="main-container">
+        <div style="width: 50%; min-height: 100vh;">
+            <div class="About-me-container comfortaa-myfont">
+                <h2>
+                    <b> О себе </b>
+                </h2>
+
+                <div class="About-me">
+                    Я Макаров Вячеслав. Студент, обучающийся в Московском Технического Университете
+                    Связи и Информатики на 1 курсе программной инженерии. Увлекаюсь видеоиграми, художественной
+                    литературой,
+                    в особенности фэнтези и киберпанком. Вижу себя в будущем разработчиком ПО, а точнее Full-Stack
+                    прогером.
+                    Уже владею Python, C++, HTML + CSS, SQL, пробую себя также в Django и React фреймворках.
+                </div>
+            </div>
+
+            <div class="Projects-container comfortaa-myfont">
+                <h2>
+                    <b> Проекты </b>
+                </h2>
+
+                <div class="Projects">
+                    Из проектов разрабатывал приложение по парсингу и фильтрации данных о вакансиях с сайта
+                    HeadHunter(hh.ru),
+                    принимал участие в создании сервиса по поиску арендодателей автомобилей высокого класса в Москве.
+                    Также создаю небольшие утилиты на языке Python, к примеру консольное миниприложение для скачивания
+                    видео
+                    с ресурса YouTube по ссылке.
+
+                </div>
+            </div>
+
+            <div class="Skills-container comfortaa-myfont">
+                <h2>
+                    <b> Навыки </b>
+                </h2>
+
+                <div class="Skills">
+                    Умею работать в команде и проявлять инициативу для достижения общей цели. Пунктуален и ответственно
+                    подхожу к работе.
+                </div>
+            </div>
+        </div>
+
+        <div class="image" style="width: 50%; min-height: 100vh;">
+            <div class="image-container">
+                <img src="./assets/Collage_of_Python_programming_aspects_syntax_libraries_Python_symbols.jpg" alt="">
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .main-container {
+            display: flex;
+        }
+
+        .About-me-container {
+            width: 90%;
+            margin: 10px 10px 10px 10px;
+            color: #ffffff;
+        }
+
+        .About-me {
+            text-align: left;
+            padding: 0px 0px 0px 10px;
+        }
+
+        .Projects-container {
+            width: 90%;
+            margin: 10px 10px 10px 10px;
+            color: #ffffff;
+        }
+
+        .Projects {
+            text-align: left;
+            padding: 0px 0px 0px 10px;
+        }
+
+        .Skills-container {
+            width: 90%;
+            margin: 10px 10px 10px 10px;
+            color: #ffffff;
+        }
+
+        .Skills {
+            text-align: left;
+            padding: 0px 0px 0px 10px;
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+
+</html>

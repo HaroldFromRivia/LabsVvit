@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Embed with Form</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('./born2bsportyV2/Born2bSportyV2.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .text_0 {
+            font-family: 'CustomFont', sans-serif;
+            font-size: 700%;
+            color: white;
+        }
+
+        .text_1 {
+            font-family: 'CustomFont', sans-serif;
+            font-size: 170%;
+            text-decoration: none;
+            color: white;
+        }
+
+        .button_0 {
+            font-family: 'CustomFont', sans-serif;
+            font-size: 170%;
+            text-decoration: none;
+            color: white;
+            background: none;
+            border: none;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        iframe {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body id="for-body">
+    <div class="container">
+        <h1 class="text_0">Embed YouTube Video</h1>
+        <form id="videoForm">
+            <label for="youtubeUrl" class="text_1">Enter YouTube URL:</label><br>
+            <input type="text" id="youtubeUrl" name="youtubeUrl" required><br><br>
+            <input type="submit" class="button_0" value="Submit">
+        </form>
+        <div id="videoContainer">
+            <iframe id="videoPlayer" width="560" height="315" src="" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        const A = window.innerWidth; // примерное значение
+        const B = window.innerHeight; // примерное значение
+
+        const x = Math.atan(B / A);
+        const y = Math.atan(A / B);
+
+        const xDegrees = x * (180 / Math.PI);
+        const yDegrees = y * (180 / Math.PI);
+
+        console.log("Ygol x: ", xDegrees.toFixed(2));
+        console.log("Ygol y: ", yDegrees.toFixed(2));
+
+        const gradientFunc = () => {
+            document.getElementById("for-body").style.background = `linear-gradient(${xDegrees}deg, #00fffd, #38ff00)`;
+        };
+
+        document.getElementById("videoForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let youtubeUrl = document.getElementById("youtubeUrl").value;
+            let videoId = youtubeUrl.split("v=")[1];
+            if (videoId.indexOf("&") !== -1) {
+                videoId = videoId.split("&")[0];
+            }
+            let embedUrl = `https://www.youtube.com/embed/${videoId}`;
+            document.getElementById("videoPlayer").src = embedUrl;
+        });
+
+        // Вызов функции для установки градиента при загрузке страницы
+        gradientFunc();
+
+    </script>
+</body>
+
+</html>
